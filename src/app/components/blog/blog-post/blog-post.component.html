@@ -1,0 +1,47 @@
+<mat-card *ngIf="!updating">
+    <mat-card-title>
+        <h1>{{blog.title}}</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+        <h3>{{blog.subTitle}}</h3>
+    </mat-card-subtitle>
+    <mat-card-content>
+        <p>{{blog.blogBody}}</p>
+    </mat-card-content>
+    <mat-card-footer>
+        <span class="footer"><p>Author: {{blog.username}}</p></span>
+    </mat-card-footer>
+</mat-card>
+<mat-card *ngIf="updating">
+    <mat-card-content>
+        <mat-form-field>
+            <p>Your title:</p>
+            <input matInput type="text" name="title" ngModel value="{{blog.title}}" #title="ngModel" matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <p>Your subtitle:</p>
+            <input matInput type="text" name="subTitle" value="{{blog.subTitle}}" ngModel #subTitle="ngModel" matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <p>Your content:</p>
+            <textarea matInput rows="6" name="content" ngModel value="{{blog.blogBody}}" #content="ngModel" matInput></textarea>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" >Update Post</button>
+    </mat-card-actions>
+</mat-card>
+<div *ngIf="blog.username == user.username">
+    <button mat-raised-button color="primary" (click)="onUpdate()">Update Blog</button>
+    <button mat-raised-button color="warn" (click)="onDelete(blog.postId)">Delete Blog</button>
+</div>
+<div>
+    <div class="blog-wrapper">
+        <hr>
+    </div>
+    <div class="comment-section">
+        <app-comment-section ></app-comment-section>
+    </div>    
+</div>

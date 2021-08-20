@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/blogs",
+      "lambdaFunction": "blogsFunction",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/blogs"
+    }
+  ],
+  "resourceName": "blogApi",
+  "apiName": "blogApi",
+  "functionArns": [
+    {
+      "lambdaFunction": "blogsFunction"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-fullstackblog-dev-103421-authRole",
+    "unAuthRoleName": "amplify-fullstackblog-dev-103421-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "blogsFunction",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

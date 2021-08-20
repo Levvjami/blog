@@ -1,0 +1,19 @@
+.createdBy{
+    text-shadow: black 0.5px 1px;
+    color: coral;
+}
+.divBG {
+    background-color: #EFEFEF;
+}
+.content-container{
+    border-top: 0.5px #888 solid;
+    padding: 16px;
+}
+
+body{
+    padding: 1rem;
+}
+
+.container{
+    padding: 1rem;
+}

@@ -1,0 +1,14 @@
+<mat-accordion *ngFor='let blog of blogs' class="container">
+    <mat-card *ngIf="blog.title != ''" (click)='onTest(blog.postId)' class="divBG">
+        <mat-card-title>
+            <h1 [ngClass]="{'createdBy': blog.username==user.username}">{{blog.title}}</h1>
+        </mat-card-title>
+        <mat-card-subtitle>{{blog.subTitle}}</mat-card-subtitle>
+        <mat-card-content>
+            <div class="content-container">
+                {{blog.blogBody}}
+            </div>
+        </mat-card-content>
+        <mat-card-footer>Author: {{blog.username}}</mat-card-footer>
+    </mat-card>
+</mat-accordion>

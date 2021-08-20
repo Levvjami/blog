@@ -17,9 +17,13 @@
     "target": "es2017",
     "module": "es2020",
     "lib": [
-      "es2018",
+      //"es2018",
+      "esnext",
       "dom"
-    ]
+    ],
+    "paths": {
+      "DocumentNode": ["src/graphql.shim.d"] 
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
